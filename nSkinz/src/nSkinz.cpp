@@ -5,19 +5,19 @@
 #include "UpdateCheck.hpp"
 #include "Configuration.hpp"
 
-IBaseClientDLL*		g_client;
-IClientEntityList*	g_entity_list;
-IVEngineClient*		g_engine;
-IVModelInfoClient*	g_model_info;
-IGameEventManager2*	g_game_event_manager;
-ILocalize*			g_localize;
+IBaseClientDLL*		g_client = nullptr;
+IClientEntityList*	g_entity_list = nullptr;
+IVEngineClient*		g_engine = nullptr;
+IVModelInfoClient*	g_model_info = nullptr;
+IGameEventManager2*	g_game_event_manager = nullptr;
+ILocalize*			g_localize = nullptr;
 
-CBaseClientState**	g_client_state;
+CBaseClientState**	g_client_state = nullptr;
 
 VMTHook* g_client_hook;
 VMTHook* g_game_event_manager_hook;
 
-RecvPropHook* g_sequence_hook;
+RecvPropHook* g_sequence_hook = nullptr;
 
 void __stdcall Initialize(void* instance)
 {
